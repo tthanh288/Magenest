@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="adminhtml_customer_prepare_save">
+        <observer name="magenest_customer_changname" instance="Magenest\Movie\Observer\ChangeName" />
+    </event>
+
+    <event name="save_movie">
+        <observer name="magenest_movie_savemovie" instance="Magenest\Movie\Observer\SaveMovie" />
+    </event>
+
+    <event name="admin_system_config_changed_section_movie">
+        <observer name="custom_admin_system_config_changed_section_movie" instance="Magenest\Movie\Observer\MagenestConfigObserver"/>
+    </event>
+
+    <event name="catalog_product_save_before">
+        <observer name="save_custom_data" instance="Magenest\Movie\Observer\BeforeProductSave"/>
+    </event>
+
+    <event name="catalog_product_save_after">
+        <observer name="save_category_data" instance="Magenest\Movie\Observer\AfterProductSave"/>
+    </event>
+
+</config>
