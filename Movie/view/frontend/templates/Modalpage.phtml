@@ -2,7 +2,57 @@
 <table>
     <tr>
         <th><button id="alert-modal" class="swatch-option">Open Modal</button></th>
-        <th><button class="swatch-option">Open Magento Login Modal</button></th>
+        <th><button id="popup-window"class="swatch-option">Open Magento Login Modal</button></th>
         <th><button class="swatch-option">Open Custom Login Modal</button></th>
     </tr>
 </table>
+<script type="text/javascript">
+    require([
+            'jquery',
+            'Magento_Ui/js/modal/alert'
+        ], function($, alert) {
+            $('#alert-modal').on('click', function(){
+                alert({
+                    title: 'Alert Title',
+                    content: 'Hello World',
+                    modalClass: 'alert',
+                    actions: {
+                        always: function() {
+                            // do something when the modal is closed
+                        }
+                    },
+                    buttons: [{
+                        text: $.mage.__('Close'),
+                        class: 'action',
+                        click: function () {
+                            this.closeModal(true);
+                        }
+                    }]
+            })
+        }
+    )
+    });
+    require([
+        'jquery',
+        'popupWindow'
+    ], function ($) {
+
+        $('#popup-window').on('click', function(){
+            $("#popup-window").popupWindow({
+                "windowURL": "/customer/account/login",
+                "windowName": "customer-login",
+                "width": 400,
+                "height": 400,
+                "left": 0,
+                "top": 0,
+                "resizable": 1,
+                "scrollbars": 1,
+                "status": 1,
+                "menubar": 1
+            });
+        })
+
+    });
+
+</script>
+
