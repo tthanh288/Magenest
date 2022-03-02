@@ -17,9 +17,9 @@ class RegisterVisitObserver implements ObserverInterface
     public function execute(Observer $observer)
     {
         //$this->logger->debug('Registered');
-        $product = $observer->getProduct();
-        $category = $observer->getCategory();
-        $this->logger->debug(print_r($product->debug(), true));
-        $this->logger->debug(print_r($category->debug(), true));
+//        $product = $observer->getProduct();
+//        $category = $observer->getCategory();
+//        $this->logger->debug(print_r($product->debug(), true));
+//        $this->logger->debug(print_r($category->debug(), true));
     }
 }

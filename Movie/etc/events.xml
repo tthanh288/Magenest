@@ -6,6 +6,9 @@
 <!--    </event>-->
 
 
+<!--    <event name="checkout_onepage_controller_success_action">-->
+<!--        <observer name="invoices" instance="Magenest\Movie\Observer\Invoices" />-->
+<!--    </event>-->
     <event name="movie_register_visit">
         <observer name="register_movie_visit" instance="Magenest\Movie\Observer\RegisterVisitObserver" />
     </event>

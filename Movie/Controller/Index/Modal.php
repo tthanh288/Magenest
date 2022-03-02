@@ -1,7 +1,7 @@
 <?php
 namespace Magenest\Movie\Controller\Index;
 
-class index extends \Magento\Framework\App\Action\Action
+class Modal extends \Magento\Framework\App\Action\Action
 {
     protected $_pageFactory;
     public function __construct(

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <title>Movie Test </title>
+        <title>Modal Test </title>
     </head>
     <body>
-        <referenceContainer name="content">
-            <block class="Magenest\Movie\Block\MovieLandingspage" name="moviepage" template="Magenest_Movie::MovieLandingspage.phtml" />
-        </referenceContainer>
+    <referenceContainer name="content">
+        <block class="Magenest\Movie\Block\Modal" name="modaltest" template="Magenest_Movie::Modalpage.phtml" />
+    </referenceContainer>
         <referenceBlock name="store.menu" remove="true" />
     </body>
 </page>

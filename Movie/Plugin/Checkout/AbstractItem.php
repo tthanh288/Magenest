@@ -1,11 +1,11 @@
 <?php
-namespace Magenest\Movie\Plugin\CheckoutCart;
+namespace Magenest\Movie\Plugin\Checkout;
 
 use Magento\Checkout\Model\Session;
 use Magento\Catalog\Model\ProductRepository;
 use Magento\Catalog\Helper\Product;
 
-class Image
+class AbstractItem
 {
     protected $product;
     protected $productRepository;

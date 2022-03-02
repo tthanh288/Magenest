@@ -1,6 +1,6 @@
 <?php
 namespace Magenest\Movie\Controller\Index;
-class listmovie extends \Magento\Framework\App\Action\Action
+class newproducts extends \Magento\Framework\App\Action\Action
 {/**
  * Index action
  *
