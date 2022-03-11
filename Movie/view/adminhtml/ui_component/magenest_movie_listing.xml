@@ -132,7 +132,7 @@
             </argument>
         </column>
         <!-- Column rating -->
-        <column name="rating" class="Magenest\Movie\Ui\Component\Listing\Columns\StarRating">
+        <column name="rating" class="Magenest\Movie\Ui\Component\Listing\Columns\StarRating" >
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>

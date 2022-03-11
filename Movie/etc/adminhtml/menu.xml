@@ -54,40 +54,50 @@
             sortOrder="41"
             resource="Magenest_Movie::mainmovie"
         />
-        <add
-            id="Magenest_Movie::parent"
-            title="Movie"
-            module="Magenest_Movie"
-            sortOrder="10"
-            resource="Magenest_Movie::mainmovie"
-            parent="Magenest_Movie::mainmovie"
-        />
+<!--        <add-->
+<!--            id="Magenest_Movie::parent"-->
+<!--            title="Movie"-->
+<!--            module="Magenest_Movie"-->
+<!--            sortOrder="10"-->
+<!--            resource="Magenest_Movie::mainmovie"-->
+<!--            parent="Magenest_Movie::mainmovie"-->
+<!--        />-->
         <add
             id="Magenest_Movie::listmovie"
             title="Manage Movie"
             module="Magenest_Movie"
             sortOrder="10"
-            action="movie/magenestmovie/index"
-            resource="Magenest_Movie::magenestmovie"
-            parent="Magenest_Movie::parent"
+            action="movie/magenestmovie"
+            resource="Magenest_Movie::listmovie"
+            parent="Magenest_Movie::mainmovie"
         />
         <add
             id="Magenest_Movie::listactor"
             title="Manage Actor"
             module="Magenest_Movie"
             sortOrder="20"
-            parent="Magenest_Movie::parent"
+            parent="Magenest_Movie::mainmovie"
             action="movie/magenestactor"
-            resource="Magenest_Movie::parent"
+            resource="Magenest_Movie::listactor"
         />
         <add
             id="Magenest_Movie::listdirector"
             title="Manage Director"
             module="Magenest_Movie"
             sortOrder="30"
-            parent="Magenest_Movie::parent"
+            parent="Magenest_Movie::mainmovie"
             action="movie/magenestdirector"
-            resource="Magenest_Movie::parent"
+            resource="Magenest_Movie::listdirector"
+        />
+
+        <add
+            id="Magenest_Movie::component"
+            title="Components"
+            module="Magenest_Movie"
+            sortOrder="80"
+            parent="Magenest_Movie::mainmovie"
+            action="movie/component/"
+            resource="Magenest_Movie::component"
         />
     </menu>
 </config>
