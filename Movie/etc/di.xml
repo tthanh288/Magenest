@@ -41,6 +41,26 @@
         </arguments>
     </virtualType>
 
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="magenest_sales_listing_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Order\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magenest\Movie\Model\ResourceModel\Order\Grid\Collection" >
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sales_order_grid</argument>
+            <argument name="eventPrefix" xsi:type="string">magenest_movie_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">magenest_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Order</argument>
+        </arguments>
+    </type>
+
+
+
+
+
     <type name="Magento\Checkout\CustomerData\AbstractItem">
         <plugin name="configurable_product_avatar" type="Magenest\Movie\Plugin\Checkout\AbstractItem" sortOrder="100" />
     </type>

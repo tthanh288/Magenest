@@ -9,7 +9,11 @@
                     <item name="dataScope" xsi:type="string">entity_id</item>
                     <item name="label" xsi:type="string" translate="true">Status</item>
                 </item>
+
             </argument>
         </column>
+
     </columns>
+
+
 </listing>

@@ -23,4 +23,8 @@
         <observer name="admin_prepare_custom_customer_attribute" instance="Magenest\Movie\Observer\AdminPrepareSaveCustomer" />
     </event>
 
+
+
+
+
 </config>
