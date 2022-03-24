@@ -37,7 +37,7 @@
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">To</item>
                     <item name="dataScope" xsi:type="string">end_course</item>
-                    <item name="sortOrder" xsi:type="number">0</item>
+                    <item name="sortOrder" xsi:type="number">1</item>
                     <item name="collapsible" xsi:type="boolean">true</item>
                     <item name="opened" xsi:type="boolean">true</item>
                     <item name="formElement" xsi:type="string">date</item>
