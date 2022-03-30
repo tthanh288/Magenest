@@ -60,10 +60,9 @@
 
 
 
-
-    <type name="Magento\Checkout\CustomerData\AbstractItem">
-        <plugin name="configurable_product_avatar" type="Magenest\Movie\Plugin\Checkout\AbstractItem" sortOrder="100" />
-    </type>
+<!--    <type name="Magento\Checkout\CustomerData\AbstractItem">-->
+<!--        <plugin name="configurable_product_avatar" type="Magenest\Movie\Plugin\Checkout\AbstractItem" sortOrder="100" />-->
+<!--    </type>-->
 
 
 

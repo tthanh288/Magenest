@@ -1,0 +1,38 @@
+<div class="field avatar required">
+    <label for="avatar"
+           class="label"><span><?= __('Avatar') ?></span></label>
+    <div class="control">
+        <label for="avatar" class="custom-file-upload">
+            <?= __('Image Upload') ?>
+        </label>
+        <input type="file" id="avatar" name="avatar" class="validate-file" accept=".jpg, .jpeg, .png, .gif"/>
+        <div class="file-uploader-preview">
+            <a class="preview-link preview-image" target="_blank">
+                <img id="img-avatar" alt="<?= __('Avatar') ?>" class="mgz-cusrattr-image-preview">
+            </a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['jquery'], function($) {
+        $('#avatar').on('change', function() {
+            if (this.files && this.files[0]) {
+                var id = '#img-avatar';
+                var img = document.querySelector(id);
+                img.src = URL.createObjectURL(this.files[0]);
+                img.href = URL.createObjectURL(this.files[0]);
+                $('#img-avatar').attr('href', URL.createObjectURL(this.files[0]));
+                img.alt = this.files[0].name;
+                $(this).parent().children('.file-uploader-preview').addClass('mediaReview');
+            }
+        });
+    })
+</script>
+<style>
+    .file-uploader-preview {
+        display: none !important;
+    }
+    .mediaReview {
+        display: block !important;
+    }
+</style>

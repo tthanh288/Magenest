@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
  * Class AddPhoneAttribute
  * @package Magenest\CustomerAttribute\Setup\Patch\Data
  */
-class AddPhoneAttribute implements DataPatchInterface, PatchRevertableInterface
+class AddVnRegion implements DataPatchInterface, PatchRevertableInterface
 {
     /**
      * @var ModuleDataSetupInterface
@@ -73,7 +73,7 @@ class AddPhoneAttribute implements DataPatchInterface, PatchRevertableInterface
     public function apply()
     {
         $this->moduleDataSetup->getConnection()->startSetup();
-        $this->addPhoneAttribute();
+        $this->addVnRegion();
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 
@@ -82,35 +82,32 @@ class AddPhoneAttribute implements DataPatchInterface, PatchRevertableInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      * @throws \Zend_Validate_Exception
      */
-    public function addPhoneAttribute()
+    public function addVnRegion()
     {
         $eavSetup = $this->eavSetupFactory->create();
 
 
         $eavSetup->addAttribute(
-            \Magento\Customer\Model\Customer::ENTITY,
-            'phone_number',
+            'customer_address',
+            'vn_region',
             [
                 'type' => 'varchar',
-                'label' => 'Phone Number',
-                'input' => 'number',
+                'label' => 'Vn Region',
+                'source' => 'Magenest\Movie\Model\Config\Source\VnRegion',
+                'input' => 'select',
                 'required' => false,
                 'visible' => 1,
                 'user_defined' => 1,
-                'sort_order' => 11,
+                'sort_order' => 999,
                 'position' => 999,
-                'system' => 0,
-                'is_used_in_grid' => 1,   //setting grid options
-                'is_visible_in_grid' => 1,
-                'is_filterable_in_grid' => 1,
-                'is_searchable_in_grid' => 1,
+                'system' => 0
             ]
         );
 
         $attributeSetId = $eavSetup->getDefaultAttributeSetId(Customer::ENTITY);
         $attributeGroupId = $eavSetup->getDefaultAttributeGroupId(Customer::ENTITY);
 
-        $attribute = $this->eavConfig->getAttribute(Customer::ENTITY, 'phone_number');
+        $attribute = $this->eavConfig->getAttribute('customer_address', 'vn_region');
         $attribute->setData('attribute_set_id', $attributeSetId);
         $attribute->setData('attribute_group_id', $attributeGroupId);
 
@@ -119,13 +116,7 @@ class AddPhoneAttribute implements DataPatchInterface, PatchRevertableInterface
             'adminhtml_customer',
             'customer_address_edit',
             'customer_register_address',
-            'customer_address',
-            'checkout_register',
-            'customer_account_create',
-            'customer_account_edit',
-            'adminhtml_checkout',
-            'customer_grid_flat',
-
+            'customer_address'
         ]);
 
         $this->attributeResource->save($attribute);

@@ -9,7 +9,7 @@ class ChangeName implements \Magento\Framework\Event\ObserverInterface
     public function execute(Observer $observer)
     {
         $data = $observer->getData('customer');
-        $data->setData('firstname', 'Magenest');
+//        $data->setData('firstname', 'Magenest');
         $observer->setData('customer', $data);
     }
 }

@@ -55,19 +55,19 @@ class StartCourse extends Column
      * @param array $dataSource
      * @return array
      */
-    public function prepareDataSource(array $dataSource)
-    {
-        if (isset($dataSource['data']['items'])) {
-            foreach ($dataSource['data']['items'] as &$item) {
-                $time = $this->productFactory->create()->load($item['entity_id']);
-                $tmp = explode(" ",$time->getData('start_course'));
-                if(isset($tmp[0])){
-                    $item['start_course'] = $tmp[0];
-                }else{
-                    $item['start_course'] = "";
-                }
-            }
-        }
-        return $dataSource;
-    }
+//    public function prepareDataSource(array $dataSource)
+//    {
+//        if (isset($dataSource['data']['items'])) {
+//            foreach ($dataSource['data']['items'] as &$item) {
+//                $time = $this->productFactory->create()->load($item['entity_id']);
+//                $tmp = explode(" ",$time->getData('start_course'));
+//                if(isset($tmp[0])){
+//                    $item['start_course'] = $tmp[0];
+//                }else{
+//                    $item['start_course'] = "";
+//                }
+//            }
+//        }
+//        return $dataSource;
+//    }
 }
