@@ -1,5 +1,5 @@
 <?php
-namespace Magenest\Blog\Controller\Adminhtml\Banner;
+namespace Magenest\Blog\Controller\Adminhtml\Blog;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 class Index extends \Magento\Backend\App\Action
@@ -16,15 +16,15 @@ class Index extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Magenest_Blog::banner');
-        $resultPage->addBreadcrumb(__('MagenestBanner'), __('MagenestBanner'));
-        $resultPage->addBreadcrumb(__('Manage Banner'),__('Manage Banner'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Magenest Banner'));
+        $resultPage->setActiveMenu('Magenest_Blog::blog');
+        $resultPage->addBreadcrumb(__('MagenestBlog'), __('MagenestBlog'));
+        $resultPage->addBreadcrumb(__('Manage Blog'),__('Manage Blog'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Magenest Blog'));
         return $resultPage;
     }
 
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Magenest_Blog::banner');
+        return $this->_authorization->isAllowed('Magenest_Blog::blog');
     }
 }

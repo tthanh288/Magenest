@@ -1,7 +1,7 @@
 <?php
-namespace Magenest\Blog\Controller\Index;
+namespace Magenest\Blog\Controller\View;
 use Magento\Framework\App\Action\Action;
-class Index extends Action
+class Id extends Action
 {
     /** @var \Magento\Framework\View\Result\PageFactory
     protected $_pageFactory;
