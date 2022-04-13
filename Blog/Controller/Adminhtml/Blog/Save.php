@@ -69,25 +69,27 @@ class Save extends Action
                     $tmp = $this->urlRewriteCollectionFactory->create()->getColumnValues('request_path');
 
                     if(!in_array($data["url_rewrite"],$tmp, true)){
+
                         $urlRewriteModel = $this->urlRewriteFactory->create();
                         /* set current store id */
-                        $urlRewriteModel->setStoreId(1);
+                        $urlRewriteModel->setStoreId(2);
                         /* this url is not created by system so set as 0 */
                         $urlRewriteModel->setIsSystem(0);
                         /* unique identifier - set random unique value to id path */
                         $urlRewriteModel->setIdPath(rand(1, 100000));
-                        /* set actual url path to target path field */
                         if($id){
                             $target = "/blog/view/id/".$id;
                         }else{
                             $new_id = $blog->getId();
                             $target = "/blog/view/id/".$new_id;
                         }
+                        /* set actual url path to target path field */
                         $urlRewriteModel->setTargetPath($target);
                         /* set requested path which you want to create */
                         $urlRewriteModel->setRequestPath($data["url_rewrite"]);
                         /* set current store id */
                         $urlRewriteModel->save();
+
                         $this->messageManager->addSuccess(__('Save blog and new url_rewrite rule.'));
                     }else{
                         $this->messageManager->addSuccess(__('Save blog but no url_rewrite rule created.'));
